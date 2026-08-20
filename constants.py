@@ -22,6 +22,12 @@ IMAGE_TITLE_LOGO = os.path.join(IMAGES_DIR, "background", "title_logo.png")
 IMAGE_EXPLOSION = os.path.join(IMAGES_DIR, "effects", "explosion.png")
 IMAGE_BULLET_UI = os.path.join(IMAGES_DIR, "ui", "bullet_and_ui.png")
 
+# 사운드 및 랭킹 파일 경로
+SOUNDS_DIR = os.path.join(ASSETS_DIR, "sounds")
+SOUND_SHOOT = os.path.join(SOUNDS_DIR, "laser_shoot.wav")
+RANKING_FILE = os.path.join(BASE_DIR, "ranking.json")
+MAX_RANKING_ENTRIES = 5
+
 # ==========================================
 # 2. 화면 및 기본 설정
 # ==========================================
