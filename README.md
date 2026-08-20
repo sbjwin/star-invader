@@ -19,7 +19,7 @@
 
 ## 👨‍💻 2. 개발자 정보
 
-* **개발자**: 백진성 ([@sbjwin](https://github.com/sbjwin))
+* **개발자**: 성백진 (Baekjin Sung) ([@sbjwin](https://github.com/sbjwin))
 * **저장소**: [https://github.com/sbjwin/star-invader](https://github.com/sbjwin/star-invader)
 
 ---
