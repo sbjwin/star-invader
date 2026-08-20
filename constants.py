@@ -4,12 +4,23 @@
 """
 
 import os
+import sys
 
 # ==========================================
-# 1. 경로 설정 (Assets Path)
+# 1. 경로 설정 (Assets Path & Data Path)
 # ==========================================
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ASSETS_DIR = os.path.join(BASE_DIR, "assets")
+# 실행 환경(PyInstaller 패키징 여부)에 따른 리소스 디렉토리 결정
+if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
+    # PyInstaller 패키징 실행 환경
+    ASSETS_BASE_DIR = str(sys._MEIPASS)
+    DATA_BASE_DIR = os.path.dirname(sys.executable)
+else:
+    # 일반 파이썬 실행 환경
+    ASSETS_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATA_BASE_DIR = ASSETS_BASE_DIR
+
+BASE_DIR = ASSETS_BASE_DIR
+ASSETS_DIR = os.path.join(ASSETS_BASE_DIR, "assets")
 IMAGES_DIR = os.path.join(ASSETS_DIR, "images")
 
 # 세부 이미지 파일 경로
@@ -25,7 +36,7 @@ IMAGE_BULLET_UI = os.path.join(IMAGES_DIR, "ui", "bullet_and_ui.png")
 # 사운드 및 랭킹 파일 경로
 SOUNDS_DIR = os.path.join(ASSETS_DIR, "sounds")
 SOUND_SHOOT = os.path.join(SOUNDS_DIR, "laser_shoot.wav")
-RANKING_FILE = os.path.join(BASE_DIR, "ranking.json")
+RANKING_FILE = os.path.join(DATA_BASE_DIR, "ranking.json")
 MAX_RANKING_ENTRIES = 5
 
 # ==========================================
